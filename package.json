@@ -2,13 +2,21 @@
   "name": "gb",
   "version": "1.0.0",
   "description": "Powerful shell for rapidly deploying your WordPress projects.",
-  "main": "index.js",
+  "main": "postcss.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prod": "webpack"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jstriedinger/goalbusiness.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jstriedinger/goalbusiness/issues"
+  },
+  "homepage": "https://github.com/jstriedinger/goalbusiness#readme",
   "devDependencies": {
     "autoprefixer": "^9.4.7",
     "babel-core": "^6.26.0",
