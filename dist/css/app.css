@@ -6779,6 +6779,28 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+.has-navbar-fixed-top {
+  padding-top: 0 !important; }
+
+body {
+  background: #fafafa;
+  position: relative;
+  line-height: 1.7;
+  font-size: 0.9rem; }
+
 h1 {
   color: red !important; }
+
+section#home {
+  background: url("../img/parc.jpg") center center fixed;
+  background-size: cover;
+  height: 100vh; }
+
+nav.navbar {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35); }
 

@@ -1,6 +1,30 @@
 @charset "utf-8";
 @import "~bulma";
 
+.has-navbar-fixed-top{
+	padding-top: 0 !important;
+}
+
+body{
+	background: $white-bis;
+	position: relative;
+	line-height: 1.7;
+	font-size: 0.9rem;
+}
 h1{
 	color: red !important;
+}
+
+section#home{
+	background: url("../img/parc.jpg") center center fixed;
+	background-size: cover;
+	height: 100vh;
+}
+nav.navbar{
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	width: 100%;
+	background: transparent;
+	border-bottom: 1px solid rgba(white,0.35)
 }
