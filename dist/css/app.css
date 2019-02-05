@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
 /*! bulma.io v0.7.2 | MIT License | github.com/jgthms/bulma */
 @-webkit-keyframes spinAround {
   from {
@@ -1115,7 +1116,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   color: #4a4a4a;
   display: block;
-  padding: 1.25rem; }
+  padding: 2rem; }
 
 a.box:hover, a.box:focus {
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px #3273dc; }
@@ -1130,10 +1131,10 @@ a.box:active {
   color: #363636;
   cursor: pointer;
   justify-content: center;
-  padding-bottom: calc(0.375em - 1px);
-  padding-left: 0.75em;
-  padding-right: 0.75em;
-  padding-top: calc(0.375em - 1px);
+  padding-bottom: 1.6rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 1.6rem;
   text-align: center;
   white-space: nowrap; }
   .button strong {
@@ -6779,22 +6780,54 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+.title, .subtitle, .navbar-item {
+  font-family: 'Roboto Condensed'; }
+
 .has-navbar-fixed-top {
   padding-top: 0 !important; }
 
+.is-vcentered {
+  align-items: center; }
+
 body {
-  background: #fafafa;
+  background: white;
   position: relative;
   line-height: 1.7;
   font-size: 0.9rem; }
 
-h1 {
-  color: red !important; }
+@media screen and (min-width: 769px), print {
+  section:nth-of-type(2) {
+    padding-top: 6rem; } }
 
 section#home {
-  background: url("../img/parc.jpg") center center fixed;
+  background: url("../img/home.jpg") center center fixed;
   background-size: cover;
-  height: 100vh; }
+  position: relative; }
+  section#home .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(26, 36, 52, 0.4);
+    z-index: 1 !important;
+    width: 100%;
+    height: 100%; }
+  section#home * {
+    z-index: 2; }
+  section#home .wrapper {
+    position: relative; }
+    section#home .wrapper img {
+      max-width: 80px; }
+    @media screen and (min-width: 769px), print {
+      section#home .wrapper {
+        width: 95%;
+        max-width: 1400px;
+        margin: 0 auto;
+        border: 1px solid whitesmoke;
+        margin-bottom: -3.5rem; } }
+    section#home .wrapper .title, section#home .wrapper .subtitle {
+      color: inherit; }
+  section#home .title, section#home .subtitle {
+    color: white; }
 
 nav.navbar {
   position: fixed;
@@ -6803,4 +6836,67 @@ nav.navbar {
   width: 100%;
   background: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.35); }
+  nav.navbar .navbar-menu {
+    background: transparent; }
+    @media screen and (max-width: 1087px) {
+      nav.navbar .navbar-menu {
+        background: rgba(26, 36, 52, 0.3); } }
+    @media screen and (min-width: 769px), print {
+      nav.navbar .navbar-menu {
+        max-width: 1400px;
+        margin: 0 auto; } }
+  nav.navbar a.navbar-item, nav.navbar a.navbar-link {
+    color: white;
+    padding: 1.75rem 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 250ms linear; }
+    nav.navbar a.navbar-item:hover, nav.navbar a.navbar-item:focus, nav.navbar a.navbar-item:active, nav.navbar a.navbar-link:hover, nav.navbar a.navbar-link:focus, nav.navbar a.navbar-link:active {
+      background: rgba(255, 255, 255, 0.3); }
+  nav.navbar .navbar-burger {
+    color: white; }
+
+.wrapper {
+  width: 100%;
+  padding: 1rem 0.5rem; }
+  .wrapper.white {
+    background: white; }
+    .wrapper.white.border-top {
+      border-top: 1px solid whitesmoke; }
+  .wrapper.clients img {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%); }
+
+.button {
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  font-size: 0.8rem; }
+
+.box {
+  border: 1px solid whitesmoke;
+  border-radius: 0;
+  box-shadow: none;
+  position: relative; }
+  .box.goalcard .holder {
+    margin: 0 auto;
+    max-width: 60%; }
+
+.columns.is-variable-in-desktop .columns {
+  margin: 0; }
+
+@media screen and (min-width: 769px), print {
+  .columns.is-variable-in-desktop.is-6 > .column {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; }
+  .columns.is-variable-in-desktop.is-6.is-multiline.is-blog-page > .column:nth-child(n+4) {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem; } }
+
+@media screen and (min-width: 769px), print {
+  .columns.is-variable-in-desktop.is-8 > .column {
+    padding-left: 2rem;
+    padding-right: 2rem; }
+  .columns.is-variable-in-desktop.is-8.is-multiline.is-blog-page > .column:nth-child(n+4) {
+    padding-bottom: 2rem;
+    padding-top: 2rem; } }
 
