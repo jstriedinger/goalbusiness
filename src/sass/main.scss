@@ -155,28 +155,67 @@ nav.navbar{
 	text-transform: uppercase;
 	font-size: 0.8rem;
 }
-.box{
-	border: 1px solid $white-ter;
-	border-radius: 0;
-	box-shadow: none;
-	position: relative;
+.card{
 	&.goalcard{
-		.holder{
-			margin: 0 auto;
-			max-width: 60%;
+		padding-top: 20rem;
+		border: 1px solid $white-ter;
+		border-radius: 0;
+		box-shadow: none;
+		position: relative;
+		
+
+		.media{
+			display: block;
+			.media-left,.media-content{ display: block; color: white;}
+			img{ max-width: 70%; margin: 0 auto; display: block; }
+			@include desktop{
+				display: flex;
+				align-items: center;
+				.media-left{
+					max-width: 40%;
+					img{
+						max-width: 100%;
+					}
+				}
+
+			}
+		}
+		&.bogotacup, &.ligaf7, &.torneof7, &.esliga{
+			background: url("../img/home.jpg") center center;
+			background-size: auto 100%;
+
+		}
+		.mask{
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: linear-gradient(to bottom, transparent, rgba(#1a2434, 1));;
+			z-index: 1 !important;
+			width: 100%;
+			height: 100%;
+		}
+		*{
+			z-index: 2;
 		}
 	}
 }
-.columns.is-variable-in-desktop
-{
-	.columns{
-		margin: 0;
-	}
-	&.is-6
+.columns{
+	&.is-variable-in-desktop
 	{
-		@include customGap(6);
+		.columns{
+			margin: 0;
+		}
+		&.is-6
+		{
+			@include customGap(6);
+		}
+		&.is-8{
+			@include customGap(8);
+		}
 	}
-	&.is-8{
-		@include customGap(8);
+	&.reversed{
+		@include desktop{
+			flex-direction: row-reverse;
+		}
 	}
 }

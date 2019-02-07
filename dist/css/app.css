@@ -6872,14 +6872,42 @@ nav.navbar {
   text-transform: uppercase;
   font-size: 0.8rem; }
 
-.box {
+.card.goalcard {
+  padding-top: 20rem;
   border: 1px solid whitesmoke;
   border-radius: 0;
   box-shadow: none;
   position: relative; }
-  .box.goalcard .holder {
-    margin: 0 auto;
-    max-width: 60%; }
+  .card.goalcard .media {
+    display: block; }
+    .card.goalcard .media .media-left, .card.goalcard .media .media-content {
+      display: block;
+      color: white; }
+    .card.goalcard .media img {
+      max-width: 70%;
+      margin: 0 auto;
+      display: block; }
+    @media screen and (min-width: 1088px) {
+      .card.goalcard .media {
+        display: flex;
+        align-items: center; }
+        .card.goalcard .media .media-left {
+          max-width: 40%; }
+          .card.goalcard .media .media-left img {
+            max-width: 100%; } }
+  .card.goalcard.bogotacup, .card.goalcard.ligaf7, .card.goalcard.torneof7, .card.goalcard.esliga {
+    background: url("../img/home.jpg") center center;
+    background-size: auto 100%; }
+  .card.goalcard .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, transparent, #1a2434);
+    z-index: 1 !important;
+    width: 100%;
+    height: 100%; }
+  .card.goalcard * {
+    z-index: 2; }
 
 .columns.is-variable-in-desktop .columns {
   margin: 0; }
@@ -6899,4 +6927,8 @@ nav.navbar {
   .columns.is-variable-in-desktop.is-8.is-multiline.is-blog-page > .column:nth-child(n+4) {
     padding-bottom: 2rem;
     padding-top: 2rem; } }
+
+@media screen and (min-width: 1088px) {
+  .columns.reversed {
+    flex-direction: row-reverse; } }
 
