@@ -45,35 +45,29 @@
   <div class="mask"></div>
   <div class="hero-body">
     <div class="container">
-      <h1 class="title is-1">
-        titulo grande así como el talento de jose
-      </h1>
-      <h2 class="subtitle is-3">
-        subtitulo no tan grandesillo
-      </h2>
+      <div class="columns">
+        <div class="column is-two-thirds">
+          <h1 class="subtitle is-3">
+            {{post.headline}}
+          </h1>
+          
+        </div>
+      </div>
     </div>
   </div>
   <div class="wrapper white bordered">
       <div class="container">
         <div class="columns is-vcentered is-multiline">
           <div class="column is-narrow">
-            <h5 class="title is-6 is-capitalized">nuestros clientes</h5>
+            <h5 class="title is-6 is-capitalized">Quienes han confiado en nosotros</h5>
           </div>
+          {% for client in post.get_field("clients") %}
           <div class="column has-text-centered">
-            <img src="{{theme.link}}/dist/img/people.jpg" alt="peple plays">
+            <a href="{{client.external_link}}">
+              <img src="{{client.img.url}}" alt="{{client.img.alt}}">
+            </a>
           </div>
-          <div class="column has-text-centered">
-            <img src="{{theme.link}}/dist/img/zoom.jpg" alt="zoom sports">
-          </div>
-          <div class="column has-text-centered">
-            <img src="{{theme.link}}/dist/img/disney.jpg" alt="disney once">
-          </div>
-          <div class="column has-text-centered">
-            <img src="{{theme.link}}/dist/img/google.jpg" alt="gogle colombia">
-          </div>
-          <div class="column has-text-centered">
-            <img src="{{theme.link}}/dist/img/falcao.jpg" alt="fundacion falcao">
-          </div>
+          {% endfor %}
         </div>
       </div>
   </div>
@@ -89,67 +83,23 @@
       </div>
     </div>
     <div class="columns is-vcentered is-multiline is-variable-in-desktop is-8">
+      {% for item in post.get_field("competencias") %}
       <div class="column is-half">
-        <div class="card goalcard bogotacup">
+        <div class="card goalcard {{item.title}}">
           <div class="mask"></div>
           <div class="card-content">
             <div class="media">
               <div class="media-left">
-                  <img src="{{theme.link}}/dist/img/bogotacup.png" alt="liga f7 intercolegiado goal business">
+                  <img src="{{item.logo}}" alt="{{item.title}} goal business">
               </div>
               <div class="media-content">
-                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis hendrerit magna pellentesque faucibus. Nullam nisi tortor, sodales eu tempus vitae, laoreet elementum ipsum. Vivamus varius viverra mi quis tincidunt.
+                 {{item.desc}}
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="column is-half">
-        <div class="card goalcard esliga">
-          <div class="mask"></div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                  <img src="{{theme.link}}/dist/img/esliga.png" alt="esliga goal business">
-              </div>
-              <div class="media-content">
-                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis hendrerit magna pellentesque faucibus. Nullam nisi tortor, sodales eu tempus vitae, laoreet elementum ipsum. Vivamus varius viverra mi quis tincidunt.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-half">
-        <div class="card goalcard torneof7 black">
-          <div class="mask"></div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                  <img src="{{theme.link}}/dist/img/torneof7.png" alt="torneo f7 goal business">
-              </div>
-              <div class="media-content">
-                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis hendrerit magna pellentesque faucibus. Nullam nisi tortor, sodales eu tempus vitae, laoreet elementum ipsum. Vivamus varius viverra mi quis tincidunt.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-half">
-        <div class="card goalcard ligaf7 black">
-          <div class="mask"></div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                  <img src="{{theme.link}}/dist/img/ligaf7.png" alt="torneo f7 goal business">
-              </div>
-              <div class="media-content">
-                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis hendrerit magna pellentesque faucibus. Nullam nisi tortor, sodales eu tempus vitae, laoreet elementum ipsum. Vivamus varius viverra mi quis tincidunt.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  
+       {% endfor %}
     </div>
   </div>
 </section>

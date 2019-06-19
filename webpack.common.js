@@ -3,8 +3,6 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-
 
 
 const config = {
@@ -47,23 +45,10 @@ const config = {
       }
     ]
   },
-  watch: true,
   plugins: [
     
     require('autoprefixer'),
-    new MiniCssExtractPlugin({filename: "/css/[name].css"}),
-    new BrowserSyncPlugin({
-        files: [
-          './**/*.php',
-          './**/*.twig'
-        ],
-        host: 'localhost',
-        port: 3000,
-        proxy: 'http://localhost/gb',
-        logPrefix: 'webpack',
-        logLevel: 'debug',
-        ghostMode: false
-    })
+    new MiniCssExtractPlugin({filename: "/css/[name].css"})
   ]
 };
 
