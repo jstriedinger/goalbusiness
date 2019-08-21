@@ -1,0 +1,31 @@
+{% if menu %}
+  {% for item in menu %}
+        {% if item.children|length > 0 %}
+          {% if "l-navbar" in item.classes %}
+          <div class="navbar-start">
+            {% include "partials/navigation.twig" with {'menu': item.get_children} %}
+          </div>
+          {% elseif "r-navbar" in item.classes %}
+          <div class="navbar-end">
+            {% include "partials/navigation.twig" with {'menu': item.get_children} %}
+          </div>
+          {% else %}
+          
+          <div class='navbar-item has-dropdown is-hoverable'>
+            <a class='navbar-link' href='item.link'>{{ item.title }}</a>
+            <div class='navbar-dropdown is-boxed'>
+              {% include "partials/navigation.twig" with {'menu': item.get_children} %}
+            </div>
+          </div>
+          {% endif %}
+        {% else %}
+            {% if "button" in item.classes %}
+          <div class='navbar-item'>
+            <a href="{{ item.link }}" class="{{ item.classes | join(' ') }}">{{ item.title }}</a>
+          </div>
+            {% else %}
+          <a href="{{ item.link }}" class="navbar-item {{ item.classes | join(' ') }} is-primary is-capitalized">{{ item.title }}</a>
+            {% endif %}
+        {% endif %}
+  {% endfor %}
+{% endif %}

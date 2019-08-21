@@ -61,6 +61,17 @@ if (function_exists('add_theme_support'))
 
     // Localisation Support
     load_theme_textdomain('html5blank', get_template_directory() . '/languages');
+    /**
+     * Add support for core custom logo.
+     *
+     * @link https://codex.wordpress.org/Theme_Logo
+     */
+    add_theme_support( 'custom-logo', array(
+        'height'      => 128,
+        'width'       => 128,
+        'flex-width'  => true,
+        'flex-height' => true,
+    ) );
 }
 
 add_filter( 'timber/context', 'add_to_context' );
@@ -68,10 +79,11 @@ add_filter( 'timber/context', 'add_to_context' );
 function add_to_context( $context ) {
     global $post;
     // So here you are adding data to Timber's context object, i.e...
-    $context['wp_template'] = $GLOBALS['current_theme_template'];
     
     //GET HOSTNAME INFO
     $hostname = $_SERVER['SERVER_NAME']; 
+    $context["menu"] = new Timber\Menu( 'header-menu' );
+
 
 
     $custom_logo_id = get_theme_mod( 'custom_logo' );
